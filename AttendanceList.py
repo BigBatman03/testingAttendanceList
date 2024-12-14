@@ -15,8 +15,8 @@ filename = "students_Database.csv"
 use.managingList.checkIfCreated(filename) # sprawdzenie czy istnieje plik
 wantToEnd = False
 
-# TODO: E712 Avoid equality comparisons to `False`; use `if not wantToEnd:` for false checks
 while wantToEnd == False:
+# TODO: E712 Avoid equality comparisons to `False`; use `if not wantToEnd:` for false checks    
     managingListClass.students = use.managingList.importFromFile(filename)
     print("\n" * 100)
     decision = input("Zdecyduj co chcesz zrobic: "
