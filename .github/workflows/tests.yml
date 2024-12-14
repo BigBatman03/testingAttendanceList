@@ -29,7 +29,7 @@ jobs:
     runs-on: "ubuntu-latest"
 
     permissions:
-      contents: read
+      contents: write
       packages: read
       statuses: write
 
@@ -43,16 +43,23 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_PYTHON_RUFF: true
+
+          
   todo-to-issue:
     runs-on: "ubuntu-latest"
+    permissions:
+      issues: write
+      contents: write
     steps:
-      - uses: "actions/checkout@v4"
-      - name: "TODO to Issue"
-        uses: "alstr/todo-to-issue-action@v5"
+      - uses: actions/checkout@v4
         with:
-          INSERT_ISSUE_URLS: "true"
-          CLOSE_ISSUES: "true"
-          AUTO_ASSIGN: "true"
+          fetch-depth: 0
+      - name: TODO to Issue
+        uses: alstr/todo-to-issue-action@v1
+        with:
+          INSERT_ISSUE_URLS: true
+          CLOSE_ISSUES: true
+          AUTO_ASSIGN: true
       - name: Set Git user
         run: |
           git config --global user.name "github-actions[bot]"
@@ -66,3 +73,5 @@ jobs:
           else
             echo "No changes to commit"
           fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
