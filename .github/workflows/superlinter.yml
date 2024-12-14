@@ -42,8 +42,7 @@ jobs:
         uses: super-linter/super-linter/slim@v7.1.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DEFAULT_BRANCH: main
-
+          VALIDATE_PYTHON_RUFF: true
   todo-to-issue:
     runs-on: "ubuntu-latest"
     steps:
