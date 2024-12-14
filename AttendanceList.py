@@ -16,6 +16,7 @@ use.managingList.checkIfCreated(filename) # sprawdzenie czy istnieje plik
 wantToEnd = False
 
 while wantToEnd == False:
+    #TODO: E712 Avoid equality comparisons to `False`; use `if not wantToEnd:` for false checks
     managingListClass.students = use.managingList.importFromFile(filename)
     print("\n" * 100)
     decision = input("Zdecyduj co chcesz zrobic: "
@@ -31,6 +32,8 @@ while wantToEnd == False:
       _ = input("Press any key to continue...")
     elif(decision == "2"):
         wantToStop = False
+        #TODO: E712 Avoid equality comparisons to `False`; use `if not wantToStop:` for false checks.
+        #help: Replace with `not wantToStop`
         while (wantToStop == False):
             addOrDelete = input("chcesz dodac czy usunac studenta? \n1 - dodaj \n2 - usun \nenter - cofnij\n")
             if addOrDelete == "1":
@@ -98,7 +101,7 @@ while wantToEnd == False:
             except ValueError:
                 isDateGood = False
                 print("Podano bledna wartosc!")
-
+        #TODO: F541 [*] f-string without any placeholders. Remove extraneous `f` prefix
         use.attendanceData.editPresence(f"Obecność_"+fileNameDate+".csv")
     else:
         wantToEnd = True
