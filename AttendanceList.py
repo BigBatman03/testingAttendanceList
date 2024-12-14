@@ -33,6 +33,7 @@ while wantToEnd == False:
     elif(decision == "2"):
         wantToStop = False
     # TODO: E712 Avoid equality comparisons to `False`; use `if not wantToStop:` for false checks. help: Replace with `not wantToStop`
+    # Issue URL: https://github.com/BigBatman03/testingAttendanceList/issues/2
         while (wantToStop == False):
             addOrDelete = input("chcesz dodac czy usunac studenta? \n1 - dodaj \n2 - usun \nenter - cofnij\n")
             if addOrDelete == "1":
