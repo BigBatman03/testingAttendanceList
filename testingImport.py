@@ -5,6 +5,7 @@ from managingList import managingListClass
 
 class TestManagingListImportFromFile(unittest.TestCase):
 # TODO: test
+# Issue URL: https://github.com/BigBatman03/testingAttendanceList/issues/1
     def setUp(self):
         self.manager = managingListClass()
         self.test_file = "test_students.csv"
