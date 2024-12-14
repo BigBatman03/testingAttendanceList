@@ -21,4 +21,25 @@ jobs:
           python-version: '3.13'
       - name: "Install dependencies"
         run: |
-          python -m pip install --upgrade pip 
+          python -m pip install --upgrade pip
+
+          
+  lint:
+    needs: test
+    runs-on: "ubuntu-latest"
+
+    permissions:
+      contents: read
+      packages: read
+      statuses: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Run Super-Linter
+        uses: super-linter/super-linter/slim@v7.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_PYTHON_RUFF: true          
