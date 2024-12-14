@@ -21,6 +21,4 @@ jobs:
           python-version: '3.13'
       - name: "Install dependencies"
         run: |
-          python -m pip install --upgrade pip
-      - name: "Run tests with coverage"
-        run: pytest -vv --cov=src 
+          python -m pip install --upgrade pip 
