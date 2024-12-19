@@ -22,7 +22,7 @@ setup(
     include_package_data=True,
     install_requires=requirements,
     entry_points={
-        "console_scripts": ["attendancelist=AttendanceList:main"],
+        "console_scripts": ["testingListAttendance2455321243randomNumbersToAvoidErrorBZZZ=testingListAttendance2455321243randomNumbersToAvoidErrorBZZZZZ:main"],
     },
     classifiers=[
         "Programming Language :: Python :: 3",
