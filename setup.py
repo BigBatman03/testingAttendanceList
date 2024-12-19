@@ -12,19 +12,19 @@ version = os.getenv(
 
 
 setup(
-    name="teilnahme",
+    name="AttendanceList",
     version=version,
-    author="Łukasz Stachnik",
-    author_email="lukasz.marek.stachnik@gmail.com",
+    author="Michał Chawiński",
+    author_email="m.chawinski@gmail.com",
     description="Attendance management system for university",
-    long_description=open("README.md").read(),
+    long_description="Testing CD for AttendanceList"
     long_description_content_type="text/markdown",
-    url="https://github.com/VerticalHeretic/Teilnahme",
+    url="https://github.com/BigBatman03/testingAttendanceList",
     packages=find_packages(),
     include_package_data=True,
     install_requires=requirements,
     entry_points={
-        "console_scripts": ["teilnahme=src.cli.cli:main"],
+        "console_scripts": ["?"],
     },
     classifiers=[
         "Programming Language :: Python :: 3",
