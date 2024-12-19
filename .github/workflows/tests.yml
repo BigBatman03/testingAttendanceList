@@ -26,6 +26,7 @@ jobs:
           pip install pytest pytest-cov  # Ensure test dependencies are installed
 
   format:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
