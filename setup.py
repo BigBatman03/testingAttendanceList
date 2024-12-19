@@ -17,7 +17,6 @@ setup(
     author="Michał Chawiński",
     author_email="m.chawinski@gmail.com",
     description="Attendance management system for university",
-    long_description="Testing CD for AttendanceList"
     long_description_content_type="text/markdown",
     url="https://github.com/BigBatman03/testingAttendanceList",
     packages=find_packages(),
