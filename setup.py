@@ -17,13 +17,14 @@ setup(
     author="Michał Chawiński",
     author_email="m.chawinski@gmail.com",
     description="Attendance management system for university",
+    long_description="testint CD for attendance list",
     long_description_content_type="text/markdown",
     url="https://github.com/BigBatman03/testingAttendanceList",
     packages=find_packages(),
     include_package_data=True,
     install_requires=requirements,
     entry_points={
-        "console_scripts": ["?"],
+        "console_scripts": ["attendancelist=AttendanceList:main"],
     },
     classifiers=[
         "Programming Language :: Python :: 3",
