@@ -34,7 +34,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           INSERT_ISSUE_URLS: "true"
           CLOSE_ISSUES: "true"
-          AUTO_ASSIGN: "true"# GitHub token do autoryzacji
+          AUTO_ASSIGN: "true"  # GitHub token do autoryzacji
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
@@ -53,6 +53,8 @@ jobs:
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git commit -am "Automated changes"
           git push       
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Użycie tokenu do autoryzacji    
           
   lint:
     needs: test
