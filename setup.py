@@ -11,7 +11,7 @@ version = os.getenv("VERSION", "0.0.0")
 
 
 setup(
-    name="AttendanceList",
+    name="testingListAttendance2455321243randomNumbersToAvoidErrorBZZZZZ",
     version=version,
     author="Michał Chawiński",
     author_email="m.chawinski@gmail.com",
