@@ -31,7 +31,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}  # GitHub token do autoryzacji
+          token: ${{ secrets.GITHUB_TOKEN }}
+          INSERT_ISSUE_URLS: "true"
+          CLOSE_ISSUES: "true"
+          AUTO_ASSIGN: "true"# GitHub token do autoryzacji
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
