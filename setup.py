@@ -5,10 +5,9 @@ from setuptools import find_packages, setup
 with open("requirements.txt") as f:
     requirements = f.read().splitlines()
 
-version = os.getenv(
-    "VERSION", "0.0.0"
-)  # Fallback to '0.0.0'version = os.getenv('PACKAGE_VERSION', '0.0.0')  # Fallback to '0.0.0'
-
+# Fallback to '0.0.0'version = os.getenv('PACKAGE_VERSION', '0.0.0')  #
+# Fallback to '0.0.0'
+version = os.getenv("VERSION", "0.0.0")
 
 
 setup(

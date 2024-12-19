@@ -4,11 +4,10 @@ import os
 from setuptools.command.build_ext import if_dl
 
 
-
 class managingListClass:
 
     def __init__(self):
-            self.students = []
+        self.students = []
 
     def addStudent(self, name, surname, id, date):
         student = {
@@ -19,6 +18,7 @@ class managingListClass:
         }
         self.students.append(student)
         print(f"\ndodano studenta: {name} {surname}, numer studenta: {id}")
+
     def checkIfCreated(self, filename):
         try:
             if os.path.isfile(filename):
@@ -28,7 +28,8 @@ class managingListClass:
                 with open(filename, mode='w', newline='') as file:
                     writer = csv.DictWriter(file, fieldnames=fieldnames)
                     writer.writeheader()
-                print(f"Nie znaleziono bazy uczniów. \nPusty plik {filename} został utworzony.")
+                print(
+                    f"Nie znaleziono bazy uczniów. \nPusty plik {filename} został utworzony.")
         except Exception as e:
             print(f"Błąd podczas tworzenia pliku: {e}")
 
@@ -68,8 +69,10 @@ class managingListClass:
         with open(filename, mode='a', newline='', encoding='utf-8') as file:
             writer = csv.DictWriter(file, fieldnames=fieldnames)
 
-            # Przechodzimy przez listę `self.students` i zapisujemy tylko nowe rekordy
-            new_students = [student for student in self.students if student["id:"] not in existing_ids]
+            # Przechodzimy przez listę `self.students` i zapisujemy tylko nowe
+            # rekordy
+            new_students = [
+                student for student in self.students if student["id:"] not in existing_ids]
 
             if new_students:  # Sprawdzamy, czy są nowi studenci do zapisania
                 writer.writerows(new_students)

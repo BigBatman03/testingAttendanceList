@@ -3,6 +3,7 @@ import os
 import csv
 from managingList import managingListClass
 
+
 class TestSaveToFile(unittest.TestCase):
 
     def setUp(self):
@@ -14,7 +15,9 @@ class TestSaveToFile(unittest.TestCase):
         ]
 
         with open(self.test_file, mode='w', newline='', encoding='utf-8') as file:
-            writer = csv.DictWriter(file, fieldnames=["name:", "surname:", "id:", "date:"])
+            writer = csv.DictWriter(
+                file, fieldnames=[
+                    "name:", "surname:", "id:", "date:"])
             writer.writeheader()
             writer.writerows(self.default_students)
 
@@ -29,7 +32,7 @@ class TestSaveToFile(unittest.TestCase):
 
         with open(self.test_file, mode='r', newline='', encoding='utf-8') as file:
             reader = list(csv.DictReader(file))
-            self.assertEqual(len(reader)+1, len(self.default_students)) 
+            self.assertEqual(len(reader) + 1, len(self.default_students))
 
     def test_avoid_duplicates(self):
         self.manager.students = [self.default_students[0]]
@@ -46,7 +49,10 @@ class TestSaveToFile(unittest.TestCase):
 
         with open(self.test_file, mode='r', newline='', encoding='utf-8') as file:
             reader = csv.DictReader(file)
-            self.assertEqual(reader.fieldnames, ["name:", "surname:", "id:", "date:"])
+            self.assertEqual(
+                reader.fieldnames, [
+                    "name:", "surname:", "id:", "date:"])
+
 
 if __name__ == "__main__":
     unittest.main()

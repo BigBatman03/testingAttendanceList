@@ -3,6 +3,7 @@ import os
 import csv
 from managingList import managingListClass
 
+
 class TestStudentOperations(unittest.TestCase):
 
     def setUp(self):
@@ -14,7 +15,9 @@ class TestStudentOperations(unittest.TestCase):
         ]
 
         with open(self.test_file, mode='w', newline='', encoding='utf-8') as file:
-            writer = csv.DictWriter(file, fieldnames=["name:", "surname:", "id:", "date:"])
+            writer = csv.DictWriter(
+                file, fieldnames=[
+                    "name:", "surname:", "id:", "date:"])
             writer.writeheader()
             writer.writerows(self.default_students)
 
@@ -31,7 +34,9 @@ class TestStudentOperations(unittest.TestCase):
     def test_add_student_with_duplicate_id(self):
         self.manager.students = self.default_students
         self.manager.addStudent("Jane", "Smith", "126", "2023-11-03")
-        self.assertEqual(len(self.manager.students), len(self.default_students))
-    
+        self.assertEqual(len(self.manager.students),
+                         len(self.default_students))
+
+
 if __name__ == "__main__":
     unittest.main()
